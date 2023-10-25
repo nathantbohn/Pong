@@ -61,7 +61,36 @@ var Game = {
     this.turn = this.ai; 
     this.timer = this.round = 0;
     this.color = '#8c52ff';
-    
+
+
+    Pong.menu();
+    Pong.listen();
+
+
+    },
+
+    endGameMenu: function (text) {
+        //alter canvas font size and color
+        Pong.context.font = '45 Courier New';
+        Pong.contextfillStyle = this.color;
+
+        //rectangle draw beind the press key text
+        Pong.context.fillRect(
+            Pong.canvas.width / 2 - 350,
+            Pong.canvas.height / 2 -48, 
+            700,
+            100
+        );
+
+        //change the canvas color;
+        Pong.context.fillStyle = '#ffffff';
+
+        //Draw the end game menu text ('Game Over and 'Winner')
+        Pong.context.fillText(text, 
+            Pong.canvas.width /2,
+            Pong.canvas.height / 2 +15
+            );
+            
     }
 
 }

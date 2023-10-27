@@ -1,4 +1,4 @@
-// Global Variables
+// Main movement variables
 var DIRECTION = {
     IDLE: 0,
     UP: 1,
@@ -10,10 +10,10 @@ var DIRECTION = {
 var rounds = [5, 5, 3, 3, 2];
 var colors = ['#1abc9c', '#2ecc71', '#3498db', '#8c52ff', '#9b59b6'];
  
-// The ball object (The cube that bounces back and forth)
+// create the ball object
 var Ball = {
     new: function (incrementedSpeed) {
-        return {
+        return { 
             width: 18,
             height: 18,
             x: (this.canvas.width / 2) - 9,
@@ -25,7 +25,7 @@ var Ball = {
     }
 };
  
-// The ai object (The two lines that move up and down)
+// AI Object for the non-player goalie line to move up and down
 var Ai = {
     new: function (side) {
         return {
@@ -39,7 +39,7 @@ var Ai = {
         };
     }
 };
- 
+ //main game code and canvas alterations
 var Game = {
     initialize: function () {
         this.canvas = document.querySelector('canvas');
@@ -66,7 +66,7 @@ var Game = {
     },
  
     endGameMenu: function (text) {
-        // Change the canvas font size and color
+        // Change the canvas, font size and color
         Pong.context.font = '45px Courier New';
         Pong.context.fillStyle = this.color;
  
